@@ -1,0 +1,36 @@
+[info] Set current project to prova (in build file:/home/francesco/Scrivania/Chisel-Project/CHILA/Prova/)
+[info] Compiling 1 Scala source to /home/francesco/Scrivania/Chisel-Project/CHILA/Prova/target/scala-2.10/classes...
+[warn] /home/francesco/Scrivania/Chisel-Project/CHILA/Prova/prova.scala:5: tutorial has a main method with parameter type Array[String], but tutorial will not be a runnable program.
+[warn]   Reason: main method must have exact signature (Array[String])Unit
+[warn] object tutorial {
+[warn]        ^
+[warn] there were 2 feature warning(s); re-run with -feature for details
+[warn] two warnings found
+[info] Running Prova prova --genHarness --compile --test --backend c
+CPP elaborate
+backend elaborate
+// COMPILING class Prova(0)
+started inference
+finished inference (2)
+start width checking
+finished width checking
+started flattening
+finished flattening (2)
+resolving nodes to the components
+finished resolving
+started transforms
+finished transforms
+checking for combinational loops
+NO COMBINATIONAL LOOP FOUND
+g++ -c -o ./Prova-emulator.o -O2 -I../ -Inull/csrc/ ./Prova-emulator.cpp RET 0
+g++ -c -o ./Prova.o -O2 -I../ -Inull/csrc/ ./Prova.cpp RET 0
+g++ -o ./Prova ./Prova.o ./Prova-emulator.o RET 0
+SEED 1399646260602
+STARTING ./Prova
+RESET 5
+STEP 1 -> 1
+  PEEK Prova.io_out -> 0x2a
+EXPECT Prova.io_out <- 42 == 42 PASS
+RAN 1 CYCLES PASSED
+PASSED
+[success] Total time: 6 s, completed 9-mag-2014 16.37.42

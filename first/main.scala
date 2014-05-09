@@ -5,11 +5,11 @@ object TestMain
 {
 	def main(args: Array[String]): Unit = 
 	{
- 		chiselMain(args, () => Module(new Mux2()))	
+ 		chiselMain(args, () => Module(new ciccio()))	
 	}
 }
 
-class Mux2 extends Module
+class ciccio extends Module
 {
 	val io = new Bundle
 	{
