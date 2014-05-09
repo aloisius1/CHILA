@@ -1,0 +1,5 @@
+top_srcdir  ?= ..
+
+include suffix.mk
+
+executables += FameTransform SimpleALU
