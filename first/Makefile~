@@ -1,5 +1,3 @@
 top_srcdir  ?= ..
 
-include suffix.mk
-
-executables += FameTransform SimpleALU
+include $(top_srcdir)/suffix.mk
