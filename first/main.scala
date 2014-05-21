@@ -5,7 +5,7 @@ object TestMain
 {
 	def main(args: Array[String]): Unit = 
 	{
- 		chiselMain(args, () => Module(new ShiftRegister8()))	
+ 		chiselMain(args, () => Module(new NRegister(8)))	
 	}
 }
 
