@@ -97,14 +97,30 @@ module NRegisterE(input clk,
   assign T24 = io_D[3'h7:3'h7];
 
   always @(posedge clk) begin
-    vectreg_0 <= T4;
-    vectreg_1 <= T7;
-    vectreg_2 <= T10;
-    vectreg_3 <= T13;
-    vectreg_4 <= T16;
-    vectreg_5 <= T19;
-    vectreg_6 <= T22;
-    vectreg_7 <= T24;
+    if(io_enable) begin
+      vectreg_0 <= T4;
+    end
+    if(io_enable) begin
+      vectreg_1 <= T7;
+    end
+    if(io_enable) begin
+      vectreg_2 <= T10;
+    end
+    if(io_enable) begin
+      vectreg_3 <= T13;
+    end
+    if(io_enable) begin
+      vectreg_4 <= T16;
+    end
+    if(io_enable) begin
+      vectreg_5 <= T19;
+    end
+    if(io_enable) begin
+      vectreg_6 <= T22;
+    end
+    if(io_enable) begin
+      vectreg_7 <= T24;
+    end
   end
 endmodule
 

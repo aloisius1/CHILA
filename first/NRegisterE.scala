@@ -15,14 +15,16 @@ class NRegisterE(n:Int) extends Module
   val vbool = Vec.fill(n){Bool()}
   
 
-when(io.enable)
-{
+
  for(i <- 0 until n)
  {
+  when(io.enable)
+  {
   vectreg(i) := io.D(i)
+  }
   vbool(i) := vectreg(i).toBool()
  }
-}
+
 
  io.Q := vbool.toBits().toUInt()
 
