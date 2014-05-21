@@ -1,0 +1,8 @@
+import Chisel._
+import scala.collection.mutable.ArrayBuffer
+
+class ShiftRegister8 extends Module
+{
+  val io = new Bundle
+  {
+
