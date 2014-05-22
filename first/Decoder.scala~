@@ -1,0 +1,10 @@
+import Chisel._
+import scala.collection.mutable.ArrayBuffer
+
+class Decoder(n:Int) extends Module
+{ 
+  val io = new Bundle
+ {
+   val WADD = UInt(INPUT,n)
+   val CTRL = Vec.fill(n){ UInt(OUTPUT, 1)}
+ }

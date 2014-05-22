@@ -237,7 +237,7 @@ module NMux(
     input [7:0] io_Dvect_0,
     input [7:0] io_Dvect_1,
     output[7:0] io_Ovect,
-    output io_sel
+    input  io_sel
 );
 
   wire[7:0] T0;
@@ -271,12 +271,9 @@ module NRAMMUX(input clk, input reset,
   `endif
   NMux MUX1(
        .io_Dvect_0( RAM_io_Qbus_0 ),
-       .io_Dvect_1( RAM_io_Qbus_1 )
+       .io_Dvect_1( RAM_io_Qbus_1 ),
        //.io_Ovect(  )
-       //.io_sel(  )
+       .io_sel( io_RADD )
   );
-  `ifndef SYNTHESIS
-    assign MUX1.io_sel = {1{$random}};
-  `endif
 endmodule
 

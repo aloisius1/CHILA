@@ -35,6 +35,8 @@ for(i <- 0 until nc)
     MUX1.io.Dvect(i) :=  RAM.io.Qbus(i)
  }
   
-  //MUX1.io.sel := io.RADD
+  MUX1.io.sel := io.RADD
+
+
 
 }

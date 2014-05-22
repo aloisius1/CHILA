@@ -26,7 +26,7 @@ class NMux(n:Int, m:Int) extends Module
   {
     val Dvect = Vec.fill(n){ UInt(INPUT, m)}
     val Ovect = UInt(OUTPUT, m)
-    val sel = UInt(OUTPUT, dint)
+    val sel = UInt(INPUT, dint)
   }
   
   io.Ovect:=io.Dvect(io.sel)
