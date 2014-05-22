@@ -2,29 +2,29 @@
 [debug] Initial source changes: 
 [debug] 	removed:Set()
 [debug] 	added: Set()
-[debug] 	modified: Set(/home/aloisius/GIT/CHILA/first/NRAM.scala, /home/aloisius/GIT/CHILA/first/main.scala)
+[debug] 	modified: Set(/home/aloisius/GIT/CHILA/first/NRAMMUX.scala)
 [debug] Removed products: Set()
 [debug] Modified external sources: Set()
 [debug] Modified binary dependencies: Set()
-[debug] Initial directly invalidated sources: Set(/home/aloisius/GIT/CHILA/first/NRAM.scala, /home/aloisius/GIT/CHILA/first/main.scala)
+[debug] Initial directly invalidated sources: Set(/home/aloisius/GIT/CHILA/first/NRAMMUX.scala)
 [debug] 
 [debug] Sources indirectly invalidated by:
 [debug] 	product: Set()
 [debug] 	binary dep: Set()
 [debug] 	external source: Set()
-[debug] All initially invalidated sources: Set(/home/aloisius/GIT/CHILA/first/NRAM.scala, /home/aloisius/GIT/CHILA/first/main.scala)
-[info] Compiling 2 Scala sources to /home/aloisius/GIT/CHILA/first/target/scala-2.10/classes...
+[debug] All initially invalidated sources: Set(/home/aloisius/GIT/CHILA/first/NRAMMUX.scala)
+[info] Compiling 1 Scala source to /home/aloisius/GIT/CHILA/first/target/scala-2.10/classes...
 [debug] Getting compiler-interface from component compiler for Scala 2.10.2
 [debug] Getting compiler-interface from component compiler for Scala 2.10.2
-[debug] Running cached compiler 3999b7a4, interfacing (CompilerInterface) with Scala compiler version 2.10.2
+[debug] Running cached compiler d60e1bb, interfacing (CompilerInterface) with Scala compiler version 2.10.2
 [debug] Calling Scala compiler with arguments  (CompilerInterface):
 [debug] 	-bootclasspath
 [debug] 	/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/netx.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/plugin.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-6-openjdk-amd64/jre/classes:/home/aloisius/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.2.jar
 [debug] 	-classpath
 [debug] 	/home/aloisius/GIT/CHILA/first/target/scala-2.10/classes:/home/aloisius/.ivy2/cache/scala_2.10/sbt_0.13/com.github.scct/sbt-scct/jars/sbt-scct-0.2.1.jar:/home/aloisius/.ivy2/cache/com.github.scct/scct_2.10/jars/scct_2.10-0.2.1.jar:/home/aloisius/.ivy2/cache/edu.berkeley.cs/chisel_2.10/jars/chisel_2.10-2.2.12.jar
-[warn] there were 6 feature warning(s); re-run with -feature for details
+[warn] there were 2 feature warning(s); re-run with -feature for details
 [warn] one warning found
-[debug] Scala compilation took 15.838652544 s
+[debug] Scala compilation took 16.308368737 s
 [debug] Invalidated by transitive public inheritance: Set()
 [debug] Invalidated by direct dependency: Set()
 [debug] New invalidations:

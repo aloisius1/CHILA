@@ -5,7 +5,7 @@ object TestMain
 {
 	def main(args: Array[String]): Unit = 
 	{
- 		chiselMain(args, () => Module(new NRAM(5,8)))	
+ 		chiselMain(args, () => Module(new NRAM(2,8)))	
 	}
 }
 

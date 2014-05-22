@@ -1,5 +1,8 @@
-//n= numero di ingressi
+//-------------------------------------------------
+//               n= numero di ingressi
 //m= dimensione in bit dei singoli bus di ingresso
+//-------------------------------------------------
+
 
 import Chisel._
 import scala.collection.mutable.ArrayBuffer
