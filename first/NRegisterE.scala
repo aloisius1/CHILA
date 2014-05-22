@@ -11,14 +11,18 @@ class NRegisterE(n:Int) extends Module
     val enable = Bool(INPUT)
   }
   
-  val vectreg = Vec.fill(n){ Reg(UInt(width = 1))}
+  val vectreg = Vec.fill(n){ Reg(init = UInt(0,width = 1))}
   val vbool = Vec.fill(n){Bool()}
   
 
-
  for(i <- 0 until n)
  {
-  when(io.enable)
+  when(reset)
+  {
+   vectreg(i) := UInt(0)
+  }
+
+  .elsewhen(io.enable)
   {
   vectreg(i) := io.D(i)
   }
