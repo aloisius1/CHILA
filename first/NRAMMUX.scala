@@ -23,11 +23,13 @@ class NRAMMUX(nc:Int, m:Int) extends Module
    val D = UInt(INPUT,m)
    val Q = UInt(OUTPUT,m)
    val RADD = UInt(INPUT,dint)
+   val WADD = UInt(INPUT,dint)
  }
 
 
  val RAM  = Module(new NRAM(nc,m))   //ram
  val MUX1 = Module(new NMux(nc,m))   //output mux
+ val DECODER = Module(new Decoder(nc))   //output mux
 
 
 for(i <- 0 until nc)
@@ -37,6 +39,9 @@ for(i <- 0 until nc)
   
   MUX1.io.sel := io.RADD
 
+  DECODER.io.WADD:=io.WADD
 
-
+  RAM.io.ENbus := DECODER.io.CTRL
+  RAM.io.Dbus := io.D
+  io.Q :=  MUX1.io.Ovect
 }
