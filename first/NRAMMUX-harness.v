@@ -1,7 +1,12 @@
 module test;
   reg [7:0] io_D;
+<<<<<<< HEAD
   reg [1:0] io_RADD;
   reg [1:0] io_WADD;
+=======
+  reg [5:0] io_RADD;
+  reg [5:0] io_WADD;
+>>>>>>> 4e564282b56ccf5e9b7f10901548257089c45106
   wire [7:0] io_Q;
   reg reset = 1;
   reg clk = 0;
