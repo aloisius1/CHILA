@@ -12,7 +12,7 @@ class NRAM(nc:Int, m:Int) extends Module
   {
     val Dbus = UInt(INPUT, m)
     val Qbus = Vec.fill(nc){ UInt(OUTPUT, m)}
-    val ENbus = UInt(INPUT, nc)
+    val ENbus = Vec.fill(nc){ UInt(INPUT, 1)}
   }  
 
  val CEL = Vec.fill(nc){ Module(new NRegisterE(m)).io } 

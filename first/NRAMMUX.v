@@ -208,72 +208,148 @@ module NRAM(input clk, input reset,
     input [7:0] io_Dbus,
     output[7:0] io_Qbus_0,
     output[7:0] io_Qbus_1,
-    input [1:0] io_ENbus
+    output[7:0] io_Qbus_2,
+    output[7:0] io_Qbus_3,
+    input  io_ENbus_0,
+    input  io_ENbus_1,
+    input  io_ENbus_2,
+    input  io_ENbus_3
 );
 
-  wire T0;
-  wire T1;
+  wire[7:0] NRegisterE_3_io_Q;
+  wire[7:0] NRegisterE_2_io_Q;
   wire[7:0] NRegisterE_1_io_Q;
   wire[7:0] NRegisterE_0_io_Q;
 
 
-  assign T0 = io_ENbus[1'h1:1'h1];
-  assign T1 = io_ENbus[1'h0:1'h0];
+  assign io_Qbus_3 = NRegisterE_3_io_Q;
+  assign io_Qbus_2 = NRegisterE_2_io_Q;
   assign io_Qbus_1 = NRegisterE_1_io_Q;
   assign io_Qbus_0 = NRegisterE_0_io_Q;
   NRegisterE NRegisterE_0(.clk(clk), .reset(reset),
        .io_D( io_Dbus ),
        .io_Q( NRegisterE_0_io_Q ),
-       .io_enable( T1 )
+       .io_enable( io_ENbus_0 )
   );
   NRegisterE NRegisterE_1(.clk(clk), .reset(reset),
        .io_D( io_Dbus ),
        .io_Q( NRegisterE_1_io_Q ),
-       .io_enable( T0 )
+       .io_enable( io_ENbus_1 )
+  );
+  NRegisterE NRegisterE_2(.clk(clk), .reset(reset),
+       .io_D( io_Dbus ),
+       .io_Q( NRegisterE_2_io_Q ),
+       .io_enable( io_ENbus_2 )
+  );
+  NRegisterE NRegisterE_3(.clk(clk), .reset(reset),
+       .io_D( io_Dbus ),
+       .io_Q( NRegisterE_3_io_Q ),
+       .io_enable( io_ENbus_3 )
   );
 endmodule
 
 module NMux(
     input [7:0] io_Dvect_0,
     input [7:0] io_Dvect_1,
+    input [7:0] io_Dvect_2,
+    input [7:0] io_Dvect_3,
     output[7:0] io_Ovect,
-    input  io_sel
+    input [1:0] io_sel
 );
 
   wire[7:0] T0;
-  wire T1;
+  wire[7:0] T1;
+  wire T2;
+  wire[1:0] T3;
+  wire[7:0] T4;
+  wire T5;
+  wire T6;
 
 
   assign io_Ovect = T0;
-  assign T0 = T1 ? io_Dvect_1 : io_Dvect_0;
-  assign T1 = io_sel;
+  assign T0 = T6 ? T4 : T1;
+  assign T1 = T2 ? io_Dvect_1 : io_Dvect_0;
+  assign T2 = T3[1'h0:1'h0];
+  assign T3 = io_sel;
+  assign T4 = T5 ? io_Dvect_3 : io_Dvect_2;
+  assign T5 = T3[1'h0:1'h0];
+  assign T6 = T3[1'h1:1'h1];
+endmodule
+
+module Decoder(
+    input [1:0] io_WADD,
+    output io_CTRL_0,
+    output io_CTRL_1,
+    output io_CTRL_2,
+    output io_CTRL_3
+);
+
+  wire T0;
+  wire[3:0] T1;
+  wire[6:0] T2;
+  wire[1:0] T3;
+  wire T4;
+  wire T5;
+  wire T6;
+
+
+  assign io_CTRL_3 = T0;
+  assign T0 = T1[2'h3:2'h3];
+  assign T1 = T2[2'h3:1'h0];
+  assign T2 = 4'h1 << T3;
+  assign T3 = io_WADD;
+  assign io_CTRL_2 = T4;
+  assign T4 = T1[2'h2:2'h2];
+  assign io_CTRL_1 = T5;
+  assign T5 = T1[1'h1:1'h1];
+  assign io_CTRL_0 = T6;
+  assign T6 = T1[1'h0:1'h0];
 endmodule
 
 module NRAMMUX(input clk, input reset,
     input [7:0] io_D,
     output[7:0] io_Q,
-    input  io_RADD
+    input [1:0] io_RADD,
+    input [1:0] io_WADD
 );
 
+  wire[7:0] RAM_io_Qbus_3;
+  wire[7:0] RAM_io_Qbus_2;
   wire[7:0] RAM_io_Qbus_1;
   wire[7:0] RAM_io_Qbus_0;
+  wire DECODER_io_CTRL_3;
+  wire DECODER_io_CTRL_2;
+  wire DECODER_io_CTRL_1;
+  wire DECODER_io_CTRL_0;
+  wire[7:0] MUX1_io_Ovect;
 
 
+  assign io_Q = MUX1_io_Ovect;
   NRAM RAM(.clk(clk), .reset(reset),
-       //.io_Dbus(  )
+       .io_Dbus( io_D ),
        .io_Qbus_0( RAM_io_Qbus_0 ),
-       .io_Qbus_1( RAM_io_Qbus_1 )
-       //.io_ENbus(  )
+       .io_Qbus_1( RAM_io_Qbus_1 ),
+       .io_Qbus_2( RAM_io_Qbus_2 ),
+       .io_Qbus_3( RAM_io_Qbus_3 ),
+       .io_ENbus_0( DECODER_io_CTRL_0 ),
+       .io_ENbus_1( DECODER_io_CTRL_1 ),
+       .io_ENbus_2( DECODER_io_CTRL_2 ),
+       .io_ENbus_3( DECODER_io_CTRL_3 )
   );
-  `ifndef SYNTHESIS
-    assign RAM.io_Dbus = {1{$random}};
-    assign RAM.io_ENbus = {1{$random}};
-  `endif
   NMux MUX1(
        .io_Dvect_0( RAM_io_Qbus_0 ),
        .io_Dvect_1( RAM_io_Qbus_1 ),
-       //.io_Ovect(  )
+       .io_Dvect_2( RAM_io_Qbus_2 ),
+       .io_Dvect_3( RAM_io_Qbus_3 ),
+       .io_Ovect( MUX1_io_Ovect ),
        .io_sel( io_RADD )
+  );
+  Decoder DECODER(
+       .io_WADD( io_WADD ),
+       .io_CTRL_0( DECODER_io_CTRL_0 ),
+       .io_CTRL_1( DECODER_io_CTRL_1 ),
+       .io_CTRL_2( DECODER_io_CTRL_2 ),
+       .io_CTRL_3( DECODER_io_CTRL_3 )
   );
 endmodule
 

@@ -10,6 +10,8 @@ class DFF extends Module
     val Q = UInt(OUTPUT, 1)
   }
 
+println("ciao")
+
   val r0 = Reg(UInt(0))  
   when(io.EN===UInt(1))
   {

@@ -5,7 +5,7 @@ object TestMain
 {
 	def main(args: Array[String]): Unit = 
 	{
- 		chiselMain(args, () => Module(new Mux2()))	
+ 		chiselMain(args, () => Module(new Mod3()))	
 	}
 }
 

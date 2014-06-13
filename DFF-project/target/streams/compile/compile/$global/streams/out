@@ -1,0 +1,30 @@
+[debug] 
+[debug] Initial source changes: 
+[debug] 	removed:Set()
+[debug] 	added: Set(/home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/nRam.scala)
+[debug] 	modified: Set(/home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/main.scala)
+[debug] Removed products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated sources: Set(/home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/main.scala, /home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/nRam.scala)
+[debug] 
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All initially invalidated sources: Set(/home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/main.scala, /home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/nRam.scala)
+[info] Compiling 2 Scala sources to /home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/target/scala-2.10/classes...
+[debug] Getting compiler-interface from component compiler for Scala 2.10.2
+[debug] Getting compiler-interface from component compiler for Scala 2.10.2
+[debug] Running cached compiler 4bca8f50, interfacing (CompilerInterface) with Scala compiler version 2.10.2
+[debug] Calling Scala compiler with arguments  (CompilerInterface):
+[debug] 	-bootclasspath
+[debug] 	/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes:/home/francesco/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.10.2.jar
+[debug] 	-classpath
+[debug] 	/home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/target/scala-2.10/classes:/home/francesco/.ivy2/cache/scala_2.10/sbt_0.13/com.github.scct/sbt-scct/jars/sbt-scct-0.2.1.jar:/home/francesco/.ivy2/cache/com.github.scct/scct_2.10/jars/scct_2.10-0.2.1.jar:/home/francesco/.ivy2/cache/edu.berkeley.cs/chisel_2.10/jars/chisel_2.10-2.2.12.jar
+[error] /home/francesco/Scrivania/Chisel-Project/CHILA/DFF-project/nRam.scala:18: not found: type NRegisterE
+[error]  val CEL = Vec.fill(nc){ Module(new NRegisterE(m)).io } 
+[error]                                     ^
+[error] one error found
+[debug] Compilation failed (CompilerInterface)
+[error] (compile:compile) Compilation failed
